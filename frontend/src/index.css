@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-field-50 text-mandi-900 font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-mandi-950;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white border border-field-200 shadow-card transition-shadow duration-200;
+  }
+  .card-hover:hover {
+    @apply shadow-card-hover;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-mandi-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-mandi-600 text-white px-5 py-3 hover:bg-mandi-700 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply btn bg-harvest-500 text-white px-5 py-3 hover:bg-harvest-600 active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply btn bg-white text-mandi-700 border border-mandi-200 px-5 py-3 hover:bg-mandi-50 active:scale-[0.98];
+  }
+  .input {
+    @apply w-full rounded-xl border border-field-300 bg-white px-4 py-3 text-mandi-900 placeholder:text-field-400 focus:border-mandi-500 focus:outline-none focus:ring-2 focus:ring-mandi-500/20 transition-colors;
+  }
+  .label {
+    @apply block text-sm font-semibold text-mandi-800 mb-1.5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-mandi-950;
+  }
+  .stat-value {
+    @apply text-3xl md:text-4xl font-bold text-mandi-700;
+  }
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6cdb6;
+  border-radius: 9999px;
+  border: 2px solid #fbfaf7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8aa8a;
+}
